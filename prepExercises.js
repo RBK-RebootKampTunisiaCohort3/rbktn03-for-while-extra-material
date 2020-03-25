@@ -79,6 +79,20 @@ return r;
 // More Practice
 // 1.Go back through any of the exercises done in the introduction to repetition and refactor them to use the while loop.
 
+function StartEnd(startNum, endNum) {
+
+var result = 0;
+
+	while(startNum <= endNum) {
+
+		result += startNum;
+
+		startNum += 1;
+	}
+
+return result;
+
+}
 
 // 2.Fencepost Loop: Use a while loop to build a single string with the numbers 1 through n, separated by commas. Have it return the new string. How can we make sure not to have a comma after the last number?
 //  function counting(n) { 
@@ -88,7 +102,23 @@ return r;
 //  counting(1); // => '1' 
 //  counting(3); // => '1, 2, 3'
 
+function counting(n) {
 
+	var result = "1";
+
+	var x = 2;
+
+	while(x <= n) {
+
+		result += ", " + x;
+
+		x += 1;
+
+	}
+
+return result;
+
+}
 
 
 // 3.Meet & Greet: n numbers are coming to a party for numbers. Introduce them each to all the guests as they arrive. You should end up with output looking something like this one for n = 5:
@@ -99,6 +129,47 @@ return r;
 //  welcome 5, meet 1, 2, 3 and 4
 // HINT: search for which symbol that creates a line break in a string.
 
+function meet(n) {
+
+	var m = "meet 1";
+
+	var x = 3;
+
+	while(x < n) {
+
+		m += " ," + (x - 1);
+
+		x += 1;
+
+	}
+
+return m;	
+
+}
+
+function meetAndGreet(n) {
+
+	var result = "";
+
+	var x = 1;
+
+	while(x <= n) {
+
+		if(x === 1) {
+
+		result = "welcome 1";
+
+		} else {
+
+		result += "welcome " + x + "," + meet(x) + " and " + (x - 1) + "\n";
+
+		x += 1;
+
+	}
+}
+return result;
+
+}
 
 
 
