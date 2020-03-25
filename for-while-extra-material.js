@@ -87,15 +87,15 @@ function differenceInAges(ages){
 // Take an array and remove every second element out of that array. Always keep the first element and start removing with the next element.
 
 function removeEveryOther(arr){
-	var i = 0 ;
-	while (i < arr.length-1) {
-		if ( arr[i+1] - arr[i] !== 1) {
-			return arr[i+1] ;
-		}
-        i++;
+	var a = 0 ;
+	while (arr.length > 1) {
+		a = arr.splice(0,1) ;
+		arr.shift() ;
+		arr.unshift(a[0]) ;
 	}
-	return null ;
- }
+	return arr ;
+}
+      
 
 // Your task is to find the first element of an array that is not consecutive.
 
@@ -110,8 +110,15 @@ function removeEveryOther(arr){
 // The numbers could be positive or negative and the first non-consecutive could be either too!
 
 function firstNonConsecutive (arr) {
-
-}
+	var i = 0 ;
+	while (i < arr.length-1) {
+		if ( arr[i+1] - arr[i] !== 1) {
+			return arr[i+1] ;
+		}
+        i++;
+	}
+	return null ;
+ }
 
 // A hero is on his way to the castle to complete his mission. However, 
 
