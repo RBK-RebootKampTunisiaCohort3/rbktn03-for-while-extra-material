@@ -65,19 +65,18 @@ function multiplyBy10While(number, n){
 }
 
 // 2.Fencepost Loop: Use a while loop to build a single string with the numbers 1 through n, separated by commas. Have it return the new string. How can we make sure not to have a comma after the last number?
-function counting(n) {
-	var counter = 0; 
-	var i = 1;
-	while (i <= n){
-	 counter = counter + i + ',';
-	 i++;
-	}
-	return counter;
-} 
 //  counting(5); // => '1, 2, 3, 4, 5' 
 //  counting(1); // => '1' 
 //  counting(3); // => '1, 2, 3'
-
+function counting(n) {
+	var counter = ''; 
+	var i = 1;
+	while (i <= n){
+	 counter = counter + ', ' + i;
+	 i++;
+	}
+	return counter.slice(1);
+} 
 
 
 
@@ -88,19 +87,41 @@ function counting(n) {
 //  welcome 4, meet 1, 2 and 3 
 //  welcome 5, meet 1, 2, 3 and 4
 // HINT: search for which symbol that creates a line break in a string.
-
-
-
-
+function meetGreet(n){
+	guests = '';
+	while(n > 0){
+			if(n === 1){
+				guests = guests + 'Welcome ' + n + '\n';
+				n--;
+			}if(n === 2){
+				guests = guests + 'Welcome ' + n + ', meet ' + (n - 1) + '\n';
+				n--;
+			}if(n === 3){
+				guests = guests + 'Welcome ' + n + ', meet ' + (n - 2) + ' and ' + (n - 1) + '\n';
+				n--;
+			}if(n > 3){
+				guests = guests + 'Welcome ' + n + ', meet' + counting(n - 2) + ' and ' + (n - 1) + '\n';
+				n--;
+			}
+	}
+		return guests;
+}
 // 4.Reverse String: Write a function that takes a string as an input and returns the reverse of that string.
-//  function reverseString(str) { 
-//        // TODO: your code here 
-//  } 
+
 //  reverseString('hello'); // => 'olleh' 
 //  reverseString('1#*$'); // => '$*#1'
 // Do this using a while loop.
 
-
+function reverseString(string) { 
+      var reverse = ""
+      var i = string.length;
+      while(i>0){
+          reverse= reverse + string[i-1];
+          string.slice(1);
+           i = i - 1;
+      }
+    return reverse;
+  }
 
 // 5.Write a javascript program to print all Prime numbers from 1 to n.
 
