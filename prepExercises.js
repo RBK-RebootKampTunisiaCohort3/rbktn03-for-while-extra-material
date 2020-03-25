@@ -76,16 +76,15 @@ return result
 //  welcome 5, meet 1, 2, 3 and 4
 // HINT: search for which symbol that creates a line break in a string.
 function counting (n) {
-var result=n
+var result=''
 while (n>1){
 	 n=n-1
 	 result=n+','+result
 }
 return result
 } 
-
 function meetGreet(n){
-
+var j = 3
 var result = 'welcome 1' +'\n' + 'welcome 2, meet 1' + '\n' + 'welcome 3, meet 1 and 2'
 if(n === 1){
 return 'welcome 1'
@@ -96,11 +95,13 @@ return 'welcome 1' +'\n' + 'welcome 2, meet 1'
 else if(n === 3){
 return 'welcome 1' +'\n' + 'welcome 2, meet 1' + '\n' + 'welcome 3, meet 1 and 2'
 } else if (n>3) {
-for (var i =4; i< n; i++){
+for (var i =4; i< n +1; i++){
 
-result = result + '\n' + 'welcome ' + i + ' meet' + counting(i)
+result = result + '\n' + 'welcome ' + i + ' meet' + counting(i -1) + ' and' + j
+j++
 }
 }
+
 return result
 }
 
