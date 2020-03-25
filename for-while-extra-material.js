@@ -6,8 +6,15 @@ hint: strings also have the .length property - i.e `"starburst".length` is 9
 
 // YOUR CODE GOES HERE
 
-function (arr){
-
+function longestString (arr){
+    var i = 0 ;
+    while (i < arr.length-1) {
+    	if ( arr[i].length > arr[i+1].length ) {
+    		arr[i+1] = arr[i]
+    	} 
+    	i++;
+    }
+    	return arr[i] ;
 }
 
 // Will you make it?
@@ -18,6 +25,10 @@ function (arr){
 //    The input values are always positive.
 
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+	if (distanceToPump <= mpg * fuelLeft) {
+		return true
+	}
+	return false
 };
 
 
@@ -34,6 +45,15 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
 // The second string argument will always be of length 1
 
 function strCount(str, letter){ 
+	var i = 0 ;
+	var n = 0 ;
+	while (i < str.length) {
+		if (str.charAt(i) === letter) {
+			n++;
+		}
+		i++;
+	}
+	return n ;
 }
 
 
@@ -45,15 +65,37 @@ function strCount(str, letter){
 // Return a new array with [youngest age, oldest age, difference between the youngest and oldest age].
 
 function differenceInAges(ages){
+    var youngest = Infinity ;
+    var oldest = 0 ;
+    var arr = [] ;
+    while (ages.length > 0) {
+    	if ( youngest > ages[0] ) {
+    		youngest = ages[0] ;
+    	} 
+    	else if ( ages[0] > oldest ) {
+    		oldest = ages[0] ;
+    	}
+    	ages.shift() ;
+    }
+    arr = [youngest, oldest, oldest-youngest]
+    	return arr ;
 }
+
 
 
 
 // Take an array and remove every second element out of that array. Always keep the first element and start removing with the next element.
 
 function removeEveryOther(arr){
-  //your code here
-}
+	var i = 0 ;
+	while (i < arr.length-1) {
+		if ( arr[i+1] - arr[i] !== 1) {
+			return arr[i+1] ;
+		}
+        i++;
+	}
+	return null ;
+ }
 
 // Your task is to find the first element of an array that is not consecutive.
 
