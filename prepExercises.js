@@ -201,6 +201,44 @@ return rev;
 
 // 5.Write a javascript program to print all Prime numbers from 1 to n.
 
+function prime(n) {
+
+	var result = "2";
+
+	var i = 3;
+
+	while(i <= n) {
+
+		var j = 2;
+
+		var count = 0;
+
+		while(j < i) {
+
+			if(i % j === 0) {
+
+				count += 1;
+
+			}
+
+			j += 1;
+
+		}
+
+		if(count === 0) {
+
+		result += ", " + i;
+
+		}
+
+	i += 1;
+
+	}
+
+return result;
+
+}
+
 
 // 6.Write a JavaScript for loop that will iterate from 0 to n. For each iteration, it will check if the current number is odd or even, and display a message to the screen.
 // Sample Output : 
@@ -208,6 +246,27 @@ return rev;
 //  '1 is odd' 
 //  '2 is even'
 
+function oddEven(n) {
+
+	result = "";
+
+	for(var i = 0; i <= n; i += 1) {
+
+		if(i % 2 === 0) {
+
+			result += i + " is even \n";
+
+		} else {
+
+			result += i + " is odd \n";
+
+		}
+		
+	}
+
+return result;	
+
+}
 
 // 7.Write a javascript program to enter any number and print all factors of the number.
 
