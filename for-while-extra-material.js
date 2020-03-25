@@ -150,8 +150,15 @@ function hero(bullets, dragons){
 // Make sure you cover the cases where certain words do not show up with correct capitalization. For example, getDrinkByProfession("pOLitiCIaN") should still return "Your tax dollars".
 
 function getDrinkByProfession(param){
-
+     if (param.toLowerCase() === 'jabroni') { return "Patron Tequila" }
+     else if (param.toLowerCase() === 'school counselor') { return "Anything with Alcohol" }
+     else if (param.toLowerCase() === 'programmer') { return "Hipster Craft Beer" }
+     else if (param.toLowerCase() === 'bike gang member') { return "Moonshine" }
+     else if (param.toLowerCase() === 'politician') { return "Your tax dollars" }
+     else if (param.toLowerCase() === 'rapper') { return "Cristal" }
+     return "Beer" 
 }
+
 
 // It's too hot, and they can't even…
 // One hot summer day Pete and his friend Billy decided to buy watermelons. They chose the biggest crate. They rushed home, dying of thirst, and decided to divide their loot, however they faced a hard problem.
@@ -172,8 +179,11 @@ function getDrinkByProfession(param){
 // divide(5) === false // 5 = 2 + 3
 // divide(6) === true  // 6 = 2 + 4
 
-function divide(){
-	// your Code HERE
+function divide(w){
+	if (w > 2 && w % 2 === 0) {
+		return true ;
+	}
+	return false ;
 }
 
 
@@ -186,7 +196,16 @@ function divide(){
 // Note: You can expect all of the inputs to be the same length.
 
 function tripleTrouble(one, two, three){
-  //Solution
+     if ( one.length !== two.length || one.length !== three.length ) {
+     	return false ;
+     }
+     var i = 0 ;
+     var m = '';
+     while (i < one.length) {
+     	m += one[i]+two[i]+three[i] ;
+     	i++;
+     }
+     return m ;
 }
 
 
@@ -199,7 +218,10 @@ function tripleTrouble(one, two, three){
 // array = [1, 2, 3] and N = 3, but N is outside of the array, so the result is -1.
 
 function index(array, n){
-  //your code here
+    if (array.length <= n) {
+   	    return -1 ;
+   }
+    return array[n]**n ;
 }
 
 
@@ -216,7 +238,13 @@ function index(array, n){
 // Zero alone is fine, don't worry about it. Poor guy anyway
 
 function noBoringZeros(n) {
-  // your code
+	if ( n === 0 ) {
+		return 0 ;
+	}
+     while (n % 10 === 0) {
+		n /= 10 ;
+	}
+	return n ;
 }
 
 // There was a test in your class and you passed it. Congratulations!
@@ -230,5 +258,14 @@ function noBoringZeros(n) {
 // Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
 
 function betterThanAverage(classPoints, yourPoints) {
-  // Your code here
+     classPoints.push(yourPoints)
+     var i = 0 ;
+     while ( i < classPoints.length ) {
+     	classPoints[0] += classPoints[i] ;
+     	i++ ;
+     }
+     if (yourPoints > (classPoints[0] / classPoints.length)) {
+     	return true 
+     }
+     return false
 }
