@@ -270,11 +270,51 @@ return result;
 
 // 7.Write a javascript program to enter any number and print all factors of the number.
 
+function factor(n) {
+
+		var f = "1";
+
+		var i = 2;
+
+		while(i <= n) {
+
+			if(n % i === 0) {
+
+				f += ", " + i;
+
+			}
+
+		i += 1;
+
+		}
+
+	return f;
+
+	}
+
 // Advanced
 // 1. Write a javascript function to find the sum of first and last digit of any number, without convert it to string
 //  firstAndLast(456) ==> 4 + 6 = 11 
 //  firstAndLast(123) ==> 1 + 3 = 4 
 //  firstAndLast(197) ==> 1 + 7 = 8
+
+function firstAndLast(n) {
+
+		var first;
+
+		var last = n % 10;
+
+		while(n > 10) {
+
+		first = n ;
+
+		n /= 10;
+
+		}
+
+	return (Math.floor(first / 10) + last);
+
+	}
 
 // 2.Write a javascript program to draw the stars
 //      * 
