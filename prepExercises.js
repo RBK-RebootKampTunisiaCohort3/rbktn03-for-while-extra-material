@@ -126,13 +126,12 @@ function reverseString(string) {
 // 5.Write a javascript program to print all Prime numbers from 1 to n.
 function isPrime(n){
 	var primeList = '';
-	var i = 1;
+	var i = 2;
 	while(i <= n){
-		if(i === 1 || i === 2 || i === 3 || i === 5 || i === 7 || i === 11 || (i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0 && i % 7 !== 0 && i % 11 !== 0)){
+		if(i === 2 || i === 3 || i === 5 || i === 7 || i === 11 || (i % 2 !== 0 && i % 3 !== 0  && i % 5 !== 0 && i % 7 !== 0 && i % 11 !== 0)){
 			primeList = primeList + ', ' + i ;
-			i++;
 		}
-			i++;
+		i++;
 	}
 			return primeList.slice(1);
 }
@@ -157,21 +156,39 @@ function checkNum(n){
 
 
 // 7.Write a javascript program to enter any number and print all factors of the number.
-
-
-
-
-
+function factor(n){
+		var factors = '';
+		for (var i = 0; i <= n; i++){
+			if (n % i === 0){
+				factors = factors + ', ' + i;
+			}
+		}
+		return factors.slice(1);
+}
 // Advanced
 // 1. Write a javascript function to find the sum of first and last digit of any number, without convert it to string
 //  firstAndLast(456) ==> 4 + 6 = 11 
 //  firstAndLast(123) ==> 1 + 3 = 4 
 //  firstAndLast(197) ==> 1 + 7 = 8
-
+function firstAndLast(n){
+	
+}
 
 
 
 // 2.Write a javascript program to draw the stars
+function draw()
+ {console.log(`
+	  * 
+     *** 
+    ***** 
+   ******* 
+  ********* 
+   ******* 
+    ***** 
+     *** 
+      *`)}
+
 //      * 
 //     *** 
 //    ***** 
