@@ -124,9 +124,18 @@ function reverseString(string) {
   }
 
 // 5.Write a javascript program to print all Prime numbers from 1 to n.
-
-
-
+function isPrime(n){
+	var primeList = '';
+	var i = 1;
+	while(i <= n){
+		if(i === 1 || i === 2 || i === 3 || i === 5 || i === 7 || i === 11 || (i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0 && i % 7 !== 0 && i % 11 !== 0)){
+			primeList = primeList + ', ' + i ;
+			i++;
+		}
+			i++;
+	}
+			return primeList.slice(1);
+}
 
 // 6.Write a JavaScript for loop that will iterate from 0 to n. For each iteration, it will check if the current number is odd or even, and display a message to the screen.
 // Sample Output : 
@@ -134,7 +143,17 @@ function reverseString(string) {
 //  '1 is odd' 
 //  '2 is even'
 
-
+function checkNum(n){
+	var check = '';
+	for(var i = 0; i <= n; i++){
+		if(i % 2 === 0){
+			check = check + i + ' is even' + '\n';
+		}if (i % 2 !== 0){
+			check = check + i + ' is odd'  + '\n';
+		}
+	}
+		return check;
+}
 
 
 // 7.Write a javascript program to enter any number and print all factors of the number.
