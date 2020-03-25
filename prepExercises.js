@@ -120,7 +120,17 @@ function reverseString(str){
 //  '0 is even' 
 //  '1 is odd' 
 //  '2 is even'
+function oddOrEven(n){
+	var result = "";
+	for(var i = 0; i < n ; i++){
+		if (n % 2 === 0){
+			return n + " " + "is even";
+		}
+			return n + " " + "is odd";
 
+	}
+			return result;
+}
 
 
 
