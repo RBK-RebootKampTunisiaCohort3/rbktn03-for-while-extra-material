@@ -171,7 +171,11 @@ function factor(n){
 //  firstAndLast(123) ==> 1 + 3 = 4 
 //  firstAndLast(197) ==> 1 + 7 = 8
 function firstAndLast(n){
-	
+	var sum = sum + (n % 10);
+	while(n >= 10){
+		sum = sum + Math.floor(n / 10);
+	}
+	return sum;
 }
 
 
