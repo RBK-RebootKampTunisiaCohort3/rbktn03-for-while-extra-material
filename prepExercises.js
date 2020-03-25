@@ -81,8 +81,29 @@ function fib (n) {
 
 
 // 3.Meet & Greet: n numbers are coming to a party for numbers. Introduce them each to all the guests as they arrive. You should end up with output looking something like this one for n = 5:
-
-
+function MeetAndGreet(n){
+debugger	
+var total =''
+	var i = 0
+	while(i<=n){
+		if(i===1){
+			total = 'welcome ' + i +'\n' + total
+		  
+        }	    
+         else if (i===2) {
+	    	total += 'welcome ' + i +', meet ' + (i-1) +'\n' 
+	      
+        }
+		 else if(i===3){
+		 	total += 'welcome ' + i +', meet ' + (i-2) + ' and ' + (i-1) + '\n' 
+		}
+		 else if(i>3){
+		 	total += 'welcome ' + i +', meet ' + counting(i-2) + ' and ' + (i-1) + '\n'
+		 }
+    i++
+	}
+  return total
+}
 
 //  welcome 1 
 //  welcome 2, meet 1 
