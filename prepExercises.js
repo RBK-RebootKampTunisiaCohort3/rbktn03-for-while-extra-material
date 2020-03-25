@@ -1,19 +1,26 @@
 // Exercises
 // Basic Requirments
 // 1.Summation to n: Let's implement the function sum that takes a single parameter n, and computes the sum of all integers up to n starting from 0, e.g.:
-//  function sum(n) { 
-//  // TODO: your code here 
-//  } 
+function sum(n) { 
+	var total = 0;
+	for (var i = 0; i <= n; i++){
+		total = total + i;
+	}
+	return total;
+}
 //  sum(3); // => 6 
 //  sum(4); // => 10 
 //  sum(5); // => 15
 
 
-
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.:
-//  function factorial(n) { 
-//  // TODO: your code here 
-//  } 
+function factorial(n) { 
+  	var total = 1
+	for (var i = 1; i <= n; i++){
+		total = total * i;
+	}
+	return total;
+ } 
 //  factorial(3); // => 6 
 //  factorial(4); // => 24 
 //  factorial(5); // => 120
@@ -21,9 +28,13 @@
 
 
 // 3.Repeating a String n Times: Let's write a function called repeatString that takes two parameters: a string str, which is the string to be repeated, and count -- a number representing how many times the string s should be repeated, e.g.
-//  function repeatString(str, count) { 
-//  // TODO: your code here 
-//  } 
+function repeatString(str, count) { 
+	var total = "";
+	for (var i = 0; i < count; i++){
+		total = total + str;
+	}
+	return total;
+} 
 //  repeatString('dog', 0); // => '' 
 //  repeatString('dog', 1); // => 'dog' 
 //  repeatString('dog', 2); // => 'dogdog' 
@@ -35,12 +46,34 @@
 
 // More Practice
 // 1.Go back through any of the exercises done in the introduction to repetition and refactor them to use the while loop.
-
+//using recursion
+function multiplyBy10(number, n){
+	if (n <= 0){
+		return number;
+	}
+		return multiplyBy10(number * 10, n - 1);
+}
+//with the while loop
+function multiplyBy10While(number, n){
+	var total = number;
+	var i = 0;
+	while (i < n){
+		total = total * 10;
+		i++
+	}
+	return total;
+}
 
 // 2.Fencepost Loop: Use a while loop to build a single string with the numbers 1 through n, separated by commas. Have it return the new string. How can we make sure not to have a comma after the last number?
-//  function counting(n) { 
-//        // TODO: your code here 
-//  } 
+function counting(n) {
+	var counter = 0; 
+	var i = 1;
+	while (i <= n){
+	 counter = counter + i + ',';
+	 i++;
+	}
+	return counter;
+} 
 //  counting(5); // => '1, 2, 3, 4, 5' 
 //  counting(1); // => '1' 
 //  counting(3); // => '1, 2, 3'
