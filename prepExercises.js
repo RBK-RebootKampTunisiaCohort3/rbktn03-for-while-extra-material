@@ -155,14 +155,13 @@ function PrimeNumbers(n){
 //  '2 is even'
 function EvenOrOdd(n){
  var total = 0 + ' is even' 
-  var    i = 1  
-  while(i<=n){
+ for(var    i = 1;i<=n;i++){
   	if ((i%2)!==0){
   		total = i + ' is odd ' 
   	}else if((i%2)===0){
   		total = i + ' is even '
   	}
-  i++
+ 
 }
  return total
   }
