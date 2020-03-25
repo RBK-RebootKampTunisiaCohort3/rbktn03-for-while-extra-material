@@ -129,7 +129,7 @@ return result;
 //  welcome 5, meet 1, 2, 3 and 4
 // HINT: search for which symbol that creates a line break in a string.
 
-function meet(n) {
+function meet(n) { // i have created this function to be used later in meetAndGreet function
 
 	var m = "meet 1";
 
@@ -149,24 +149,26 @@ return m;
 
 function meetAndGreet(n) {
 
-	var result = "";
+	var result = "welcome 1\n";
 
-	var x = 1;
+	var x = 2;
 
 	while(x <= n) {
 
-		if(x === 1) {
+		if(x === 2) {
+	
+		result += "welcome 2, meet 1\n";
 
-		result = "welcome 1";
+		x += 1;
 
-		} else {
+		} 
 
 		result += "welcome " + x + "," + meet(x) + " and " + (x - 1) + "\n";
 
 		x += 1;
 
 	}
-}
+
 return result;
 
 }
@@ -174,9 +176,23 @@ return result;
 
 
 // 4.Reverse String: Write a function that takes a string as an input and returns the reverse of that string.
-//  function reverseString(str) { 
-//        // TODO: your code here 
-//  } 
+  function reverseString(str) { 
+        
+  	var rev = "";
+
+  	var i = str.length - 1;
+
+  	while(i >= 0) {
+
+  		rev += str[i];
+
+  		i -= 1;
+
+  	}
+
+return rev;
+
+  } 
 //  reverseString('hello'); // => 'olleh' 
 //  reverseString('1#*$'); // => '$*#1'
 // Do this using a while loop.
@@ -186,8 +202,6 @@ return result;
 // 5.Write a javascript program to print all Prime numbers from 1 to n.
 
 
-
-
 // 6.Write a JavaScript for loop that will iterate from 0 to n. For each iteration, it will check if the current number is odd or even, and display a message to the screen.
 // Sample Output : 
 //  '0 is even' 
@@ -195,22 +209,13 @@ return result;
 //  '2 is even'
 
 
-
-
 // 7.Write a javascript program to enter any number and print all factors of the number.
-
-
-
-
 
 // Advanced
 // 1. Write a javascript function to find the sum of first and last digit of any number, without convert it to string
 //  firstAndLast(456) ==> 4 + 6 = 11 
 //  firstAndLast(123) ==> 1 + 3 = 4 
 //  firstAndLast(197) ==> 1 + 7 = 8
-
-
-
 
 // 2.Write a javascript program to draw the stars
 //      * 
