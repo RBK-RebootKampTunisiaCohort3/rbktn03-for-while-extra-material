@@ -25,11 +25,15 @@ function longestString (arr){
 //    The input values are always positive.
 
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-	if (distanceToPump <= mpg * fuelLeft) {
-		return true
+	while ( fuelLeft > 0 ) {
+		distanceToPump -= mpg ;
+		fuelLeft--;
 	}
-	return false
-};
+	if (distanceToPump > 0 ) {
+		return false ;
+	}
+	return true ;
+}
 
 
 // Create a function called that accepts 2 string arguments and returns an integer of the count of occurrences the 2nd argument is found in the first one.
@@ -131,7 +135,14 @@ function firstNonConsecutive (arr) {
 // Return True if yes, False otherwise :)
 
 function hero(bullets, dragons){
-//Get Coding!
+    while (bullets > 1) {
+      	bullets -= 2 ;
+      	dragons -= 1 ;
+      }
+    if (dragons > 0) {
+    	return false ;
+    }
+    return true ;
 }
 
 
