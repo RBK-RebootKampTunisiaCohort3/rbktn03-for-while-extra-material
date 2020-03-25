@@ -7,7 +7,14 @@
 //  sum(3); // => 6 
 //  sum(4); // => 10 
 //  sum(5); // => 15
-
+function sum(n){
+var result = 0;
+while (n>0){
+result = result + n;
+n = n - 1;
+}
+return result;
+} 
 
 
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.:
