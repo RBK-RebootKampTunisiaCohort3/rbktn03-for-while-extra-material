@@ -54,6 +54,9 @@ return result
 // Already Done.
 // 2.Fencepost Loop: Use a while loop to build a single string with the numbers 1 through n, separated by commas. Have it return the new string. How can we make sure not to have a comma after the last number?
 function counting (n) {
+if(n === 1){
+return '1'
+}
 var result=n
 while (n>1){
 	 n=n-1
