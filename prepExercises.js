@@ -64,10 +64,10 @@ function repeatString(str,count){
 //        // TODO: your code here 
 function counting(n){
     var result = '';
-	while (n > 0){ 
-	result += n + ',' ;
-    n -= 1;	
-		
+	while (n > 0){
+        result += n + ',' ;
+	     n -= 1; 
+	
 	}
 		return result;
 }
@@ -92,7 +92,8 @@ function counting(n){
 
 // 4.Reverse String: Write a function that takes a string as an input and returns the reverse of that string.
 //  function reverseString(str) { 
-//        // TODO: your code here 
+//        // TODO: your code here
+
 //  } 
 //  reverseString('hello'); // => 'olleh' 
 //  reverseString('1#*$'); // => '$*#1'
@@ -139,7 +140,6 @@ function counting(n){
 //    ***** 
 //     *** 
 //      *
-
 
 
 // 3. Write a program that reads a character for playing the game of Rock-Paper-Scissors. If the character entered by the user is not one of 'P', 'R' or 'S', the program keeps on prompting the user to enter a new character.
