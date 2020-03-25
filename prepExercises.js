@@ -63,11 +63,13 @@ function repeatString(str,count){
 //  function counting(n) { 
 //        // TODO: your code here 
 function counting(n){
-    var result = '';
-	while (n > 0){
-        result += n + ',' ;
-	     n -= 1; 
-	
+	if(n === 1){
+	return '1';
+	}
+    var result = n;
+	while (n > 1){
+        n -= 1; 
+        result = n + ',' + result ;
 	}
 		return result;
 }
@@ -93,7 +95,15 @@ function counting(n){
 // 4.Reverse String: Write a function that takes a string as an input and returns the reverse of that string.
 //  function reverseString(str) { 
 //        // TODO: your code here
-
+function reverseString(str){
+	var string = "";
+	var i = str.length - 1;
+	while(i >= 0){
+		string += str[i];
+		i --;
+	}
+		return string;
+}
 //  } 
 //  reverseString('hello'); // => 'olleh' 
 //  reverseString('1#*$'); // => '$*#1'
@@ -102,7 +112,6 @@ function counting(n){
 
 
 // 5.Write a javascript program to print all Prime numbers from 1 to n.
-
 
 
 
