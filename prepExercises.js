@@ -63,10 +63,11 @@ function repeatString(str,count){
 //  function counting(n) { 
 //        // TODO: your code here 
 function counting(n){
-	var result = '1';
-	while (n > 1){
-		result += n;
-		n -= 1;
+    var result = '';
+	while (n > 0){ 
+	result += n + ',' ;
+    n -= 1;	
+		
 	}
 		return result;
 }
