@@ -1,9 +1,13 @@
 // Exercises
 // Basic Requirments
 // 1.Summation to n: Let's implement the function sum that takes a single parameter n, and computes the sum of all integers up to n starting from 0, e.g.:
-//  function sum(n) { 
-//  // TODO: your code here 
-//  } 
+ function sum(n) {
+  var result = 0;
+  for (var i = 1; i <= n; i++) {
+    result += i;
+  }
+  return result;
+}
 //  sum(3); // => 6 
 //  sum(4); // => 10 
 //  sum(5); // => 15
@@ -11,9 +15,14 @@
 
 
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.:
-//  function factorial(n) { 
-//  // TODO: your code here 
-//  } 
+function factorial(n) { 
+ var result=1;
+    while(n>0){
+ 	 result=result*n;
+ 	 n=n-1;
+ }
+ return result;
+ } 
 //  factorial(3); // => 6 
 //  factorial(4); // => 24 
 //  factorial(5); // => 120
@@ -21,9 +30,14 @@
 
 
 // 3.Repeating a String n Times: Let's write a function called repeatString that takes two parameters: a string str, which is the string to be repeated, and count -- a number representing how many times the string s should be repeated, e.g.
-//  function repeatString(str, count) { 
-//  // TODO: your code here 
-//  } 
+  function repeatString(str, count) { 
+	var result='';
+ 		while(count>0){
+ 			result=result+str;
+ 			count=count-1;
+ 	}
+ 		return result; 
+  } 
 //  repeatString('dog', 0); // => '' 
 //  repeatString('dog', 1); // => 'dog' 
 //  repeatString('dog', 2); // => 'dogdog' 
@@ -35,12 +49,31 @@
 
 // More Practice
 // 1.Go back through any of the exercises done in the introduction to repetition and refactor them to use the while loop.
-
+function sum1(n) {
+var result =0 ;
+while( n >0) {
+result = result + n ;
+n = n - 1 ; 
+}
+return result ;
+}
 
 // 2.Fencepost Loop: Use a while loop to build a single string with the numbers 1 through n, separated by commas. Have it return the new string. How can we make sure not to have a comma after the last number?
-//  function counting(n) { 
-//        // TODO: your code here 
-//  } 
+   function counting(n) { 
+  var result='';
+  var counter=1;
+while (counter<n){
+	result= result+ counter+',';
+    counter=counter+1;
+	}
+	if(counter===n){
+		
+		result= result+ counter;
+		counter=counter+1;
+	}
+	return result;
+    } 
+  
 //  counting(5); // => '1, 2, 3, 4, 5' 
 //  counting(1); // => '1' 
 //  counting(3); // => '1, 2, 3'
@@ -60,9 +93,15 @@
 
 
 // 4.Reverse String: Write a function that takes a string as an input and returns the reverse of that string.
-//  function reverseString(str) { 
-//        // TODO: your code here 
-//  } 
+function reverseStr(str) {
+    var result = str.length - 1; 
+    var reverseStr = '';
+      while(result >= 0) {
+        reverseStr += str[result];
+        result--;  
+      }
+      return reverseStr;
+    }
 //  reverseString('hello'); // => 'olleh' 
 //  reverseString('1#*$'); // => '$*#1'
 // Do this using a while loop.
@@ -70,7 +109,22 @@
 
 
 // 5.Write a javascript program to print all Prime numbers from 1 to n.
-
+function primeNum(n)
+{
+var store  = []; 
+var i ; 
+var j ;
+var primes = [];
+    for (i = 2; i <= n; ++i) {
+       if (!store [i])  {
+            primes.push(i);
+    for (j = i << 1; j <= n; j += i) {
+            store[j] = true;
+    }
+    }
+    }
+    return primes;
+}
 
 
 
@@ -79,12 +133,33 @@
 //  '0 is even' 
 //  '1 is odd' 
 //  '2 is even'
+function iteration(n) {
+for (var x=0; x<=n; x++) {
+        if (x === 0) {
+                console.log(x +  " is even");
+        }
+        else if (x % 2 === 0) {
+                console.log(x + " is even");   
+        }
+        else {
+                console.log(x + " is odd");
+        }
+}
+}
 
 
 
 
 // 7.Write a javascript program to enter any number and print all factors of the number.
-
+function factors(n) {
+    var str = "0";
+    for (var i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            str += ',' + i;
+        }
+    }
+    return str;
+}
 
 
 
