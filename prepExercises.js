@@ -186,18 +186,7 @@ function factor(n){
 //  firstAndLast(456) ==> 4 + 6 = 11 
 //  firstAndLast(123) ==> 1 + 3 = 4 
 //  firstAndLast(197) ==> 1 + 7 = 8
-function FirstAndLast(n){
-	var total = 0
-    var i = n
-    while(i>=0){
-    	if(i>=n){
-    	
-    		total+=Math.floor(n/100)
-           i = i - 1
-    	}
 
-    }
-}
 
 
 
