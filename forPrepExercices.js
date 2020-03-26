@@ -159,11 +159,77 @@ function minFor(arr){
 		return smallerNum;
 }
 // 3.Write a function shortestWord that works like longestWord, but returns the shortest word instead.
-function 
+function shortestWordWhile(string){
+	var stringArray = string.split(' ');
+	var shortString = stringArray[0];
+	var i = 0;
+	while(i < stringArray.length){
+		if(stringArray[i].length < shortString.length){
+			shortString = stringArray[i];
+		}else if(stringArray[i].length > shortString.length){
+			shortString = shortString;
+		}
+		i++;
+	}
+	return shortString;
+}
+
+function shortestWordFor(string){
+	var stringArray = string.split(' ');
+	var shortString = stringArray[0];
+	for(var i = 0; i < stringArray.length; i++){
+		if(stringArray[i].length < shortString.length){
+			shortString = stringArray[i];
+		}else if(stringArray[i].length > shortString.length){
+			shortString = shortString;
+		}
+	}
+	return shortString;
+}
 // 4.Write a function countChar that takes two arguments: any string, and a character (string of one letter), and returns the number of times that the character occurs in the string.
-
+function countChar(string, char){
+	var counter = 0;
+	var i = 0;
+	while(i < string.length){
+		if(string[i] === char){
+			counter++
+		}
+		i++;
+	}
+		return counter;
+}
+function countChar(string, char){
+	var counter = 0;
+	var i = 0;
+	while(i < string.length){
+		if(string[i] === char){
+			counter++
+		}
+		i++;
+	}
+		return counter;
+}
 // 5.Write a function evenLengthWords that takes an array of strings as an argument, and returns an array of just the words that have an even length.
-
+function evenLengthWordsWhile(array){
+	var evenString = [];
+	var i = 0;
+	while(i < array.length){
+		if((array[i].length % 2) === 0){
+			evenString.push(array[i]);
+		}
+		i++
+	}
+	return evenString;
+}
+function evenLengthWordsFor(array){
+	var evenString = [];
+	for(var i = 0; i < array.length; i++){
+		if((array[i].length % 2) === 0){
+			evenString.push(array[i]);
+		}
+	}
+	return evenString;
+}
 // Advanced
 // 1.Read about the join method on MDN and use it to implement a function that accepts a string as an argument and returns that string reversed
 
