@@ -2,9 +2,22 @@
 // 0.Try to write all of the exercises using both the for loop and while loop.
 
 // 1.Write a function sum that computes the sum of the numbers in an array.
-
+function sumArr(arr) {
+	var total = 0;
+	for (var i = 0; i < arr.length ; i++) {
+		total += arr[i];
+	} return total;
+   
 // 2.Write a function max that accepts an array of numbers and returns the largest number in the array.
-
+function max (array){
+	var result = 0 
+	for (i = 0; i <array.length, i++) {
+    if (result < array[i]) {
+    	result = array[i];
+    }
+	}
+	return result;
+}
 // 3.Try the following at a console:
 
 //  'the quick brown fox jumped over the lazy dog'.split(' ');
@@ -14,9 +27,11 @@
 //  Use split to write a function longestWord that takes a string as an argument and returns the longest word.
 // 4.Write a function remove that accepts an array and an element, and returns an array with all ocurrences of element removed.
 
-// function remove(array, element) {
-//  // your code here
-//  }
+ function remove(array, element) {
+  for () {
+
+  }
+}
 //  remove([1, 3, 6, 2, 3], 3); // => [1, 6, 2]
 // 5.Write a function evens that accepts an array as an argument, and returns an array consisting of all of the even numbers in that array.
 
