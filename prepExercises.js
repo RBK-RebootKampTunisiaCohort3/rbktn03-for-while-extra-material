@@ -239,3 +239,10 @@ function draw () {
 
 
 // 3. Write a program that reads a character for playing the game of Rock-Paper-Scissors. If the character entered by the user is not one of 'P', 'R' or 'S', the program keeps on prompting the user to enter a new character.
+function game (char) {
+	while (char !== 'R' && char !== 'P' && char !== 'S') {
+		char = prompt('enter a new character') ;
+	}
+    return 'right choice'
+}
+// i don't know if i had to add the games rules in my function or you want me just to read the character entered by the user (like i did above)
