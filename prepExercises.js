@@ -214,7 +214,28 @@ function firstAndLast(n) {
 //    ***** 
 //     *** 
 //      *
-
+function draw () {
+    var stars = '    *    ' ;
+   	console.log(stars);
+	var j = 5 ; 
+    var arr = [];
+	for (var i = 3 ; i >=0 ; i--) {
+      arr = stars.split('')
+		arr[j] = '*' ;
+		arr[i] = '*' ;
+       stars = arr.join('')
+		j++;
+		console.log(stars);
+	}
+	for (var i = 8 ; i >=5 ; i--) {
+      arr = stars.split('')
+		arr[j-9] = ' ' ;
+		arr[i] = ' ' ;
+       stars = arr.join('')
+		j++;
+		console.log(stars);
+	}
+}
 
 
 // 3. Write a program that reads a character for playing the game of Rock-Paper-Scissors. If the character entered by the user is not one of 'P', 'R' or 'S', the program keeps on prompting the user to enter a new character.
