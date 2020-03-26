@@ -30,6 +30,16 @@ function maxWhile(arr){
 	}
 		return largeNum;
 }
+
+function maxFor(arr){
+	var largeNum = 0;
+	for (var i = 0; i <= arr.length; i++){
+		if(arr[i] > largeNum){
+			largeNum = arr[i];
+		}
+	}
+	return largeNum;
+}
 // 3.Try the following at a console:
 
 //  'the quick brown fox jumped over the lazy dog'.split(' ');
@@ -37,6 +47,30 @@ function maxWhile(arr){
 //  '1,2,3,4,5,6'.split(',')
 // What is returned by split (You can read more about it here (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) and how does it work?
 //  Use split to write a function longestWord that takes a string as an argument and returns the longest word.
+function longestWordWhile(string){
+	var stringArray = string.split(' ')
+	var longString = '';
+	var i = 0;
+	while(i < stringArray.length){
+		if(stringArray[i].length > longString.length){
+			longString = stringArray[i];
+		}
+			i++;
+	}
+	return longString;
+}
+
+function longestWordFor(string){
+	var stringArray = string.split(' ');
+	var longString = '';
+	for(var i = 0; i < stringArray.length; i++){
+		if(stringArray[i].length > longString.length){
+			longString = stringArray[i];
+		}
+	}
+	return longString;
+}
+
 // 4.Write a function remove that accepts an array and an element, and returns an array with all ocurrences of element removed.
 
 // function remove(array, element) {
