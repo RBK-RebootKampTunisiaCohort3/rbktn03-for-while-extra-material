@@ -166,8 +166,6 @@ function shortestWordWhile(string){
 	while(i < stringArray.length){
 		if(stringArray[i].length < shortString.length){
 			shortString = stringArray[i];
-		}else if(stringArray[i].length > shortString.length){
-			shortString = shortString;
 		}
 		i++;
 	}
@@ -180,14 +178,12 @@ function shortestWordFor(string){
 	for(var i = 0; i < stringArray.length; i++){
 		if(stringArray[i].length < shortString.length){
 			shortString = stringArray[i];
-		}else if(stringArray[i].length > shortString.length){
-			shortString = shortString;
 		}
 	}
 	return shortString;
 }
 // 4.Write a function countChar that takes two arguments: any string, and a character (string of one letter), and returns the number of times that the character occurs in the string.
-function countChar(string, char){
+function countCharWhile(string, char){
 	var counter = 0;
 	var i = 0;
 	while(i < string.length){
@@ -198,14 +194,12 @@ function countChar(string, char){
 	}
 		return counter;
 }
-function countChar(string, char){
+function countCharFor(string, char){
 	var counter = 0;
-	var i = 0;
-	while(i < string.length){
+	for(var i = 0; i < string.length; i++){
 		if(string[i] === char){
 			counter++
 		}
-		i++;
 	}
 		return counter;
 }
@@ -232,8 +226,7 @@ function evenLengthWordsFor(array){
 }
 // Advanced
 // 1.Read about the join method on MDN and use it to implement a function that accepts a string as an argument and returns that string reversed
-function reversed(string){
-	var letters = string.split('');
+function reversedWhile(string){
 	var reversed = [];
 	var i = 0;
 	while(i < string.length){
@@ -242,6 +235,15 @@ function reversed(string){
 	}
 	return reversed.join('');
 }
+
+function reversedFor(string){
+	var reversed = [];
+	for(var i = 0; i < string.length; i++){
+		reversed.unshift(string[i]);
+	}
+	return reversed.join('');
+}
+
 // 2.Write a function keep that 'keeps' certain elements in an array. The function will need to take two arguments, an array, and something else -- the second argument will be what is used to determine which elements to keep.
 
 // You should be able to use this function to write evens, evenLengthWords, a hypothetical odds function, or oddLengthWords without changing the keep function.
