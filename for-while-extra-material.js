@@ -6,8 +6,15 @@ hint: strings also have the .length property - i.e `"starburst".length` is 9
 
 // YOUR CODE GOES HERE
 
-function (arr){
-
+function longestString (arr){
+    var i = 0 ;
+    while (i < arr.length-1) {
+    	if ( arr[i].length > arr[i+1].length ) {
+    		arr[i+1] = arr[i]
+    	} 
+    	i++;
+    }
+    	return arr[i] ;
 }
 
 // Will you make it?
@@ -18,7 +25,15 @@ function (arr){
 //    The input values are always positive.
 
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-};
+	while ( fuelLeft > 0 ) {
+		distanceToPump -= mpg ;
+		fuelLeft--;
+	}
+	if (distanceToPump > 0 ) {
+		return false ;
+	}
+	return true ;
+}
 
 
 // Create a function called that accepts 2 string arguments and returns an integer of the count of occurrences the 2nd argument is found in the first one.
@@ -34,6 +49,15 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
 // The second string argument will always be of length 1
 
 function strCount(str, letter){ 
+	var i = 0 ;
+	var n = 0 ;
+	while (i < str.length) {
+		if (str.charAt(i) === letter) {
+			n++;
+		}
+		i++;
+	}
+	return n ;
 }
 
 
@@ -45,15 +69,37 @@ function strCount(str, letter){
 // Return a new array with [youngest age, oldest age, difference between the youngest and oldest age].
 
 function differenceInAges(ages){
+    var youngest = Infinity ;
+    var oldest = 0 ;
+    var arr = [] ;
+    while (ages.length > 0) {
+    	if ( youngest > ages[0] ) {
+    		youngest = ages[0] ;
+    	} 
+    	else if ( ages[0] > oldest ) {
+    		oldest = ages[0] ;
+    	}
+    	ages.shift() ;
+    }
+    arr = [youngest, oldest, oldest-youngest]
+    	return arr ;
 }
+
 
 
 
 // Take an array and remove every second element out of that array. Always keep the first element and start removing with the next element.
 
 function removeEveryOther(arr){
-  //your code here
+	var a = 0 ;
+	while (arr.length > 1) {
+		a = arr.splice(0,1) ;
+		arr.shift() ;
+		arr.unshift(a[0]) ;
+	}
+	return arr ;
 }
+      
 
 // Your task is to find the first element of an array that is not consecutive.
 
@@ -68,8 +114,15 @@ function removeEveryOther(arr){
 // The numbers could be positive or negative and the first non-consecutive could be either too!
 
 function firstNonConsecutive (arr) {
-
-}
+	var i = 0 ;
+	while (i < arr.length-1) {
+		if ( arr[i+1] - arr[i] !== 1) {
+			return arr[i+1] ;
+		}
+        i++;
+	}
+	return null ;
+ }
 
 // A hero is on his way to the castle to complete his mission. However, 
 
@@ -82,7 +135,14 @@ function firstNonConsecutive (arr) {
 // Return True if yes, False otherwise :)
 
 function hero(bullets, dragons){
-//Get Coding!
+    while (bullets > 1) {
+      	bullets -= 2 ;
+      	dragons -= 1 ;
+      }
+    if (dragons > 0) {
+    	return false ;
+    }
+    return true ;
 }
 
 
@@ -101,8 +161,15 @@ function hero(bullets, dragons){
 // Make sure you cover the cases where certain words do not show up with correct capitalization. For example, getDrinkByProfession("pOLitiCIaN") should still return "Your tax dollars".
 
 function getDrinkByProfession(param){
-
+     if (param.toLowerCase() === 'jabroni') { return "Patron Tequila" }
+     else if (param.toLowerCase() === 'school counselor') { return "Anything with Alcohol" }
+     else if (param.toLowerCase() === 'programmer') { return "Hipster Craft Beer" }
+     else if (param.toLowerCase() === 'bike gang member') { return "Moonshine" }
+     else if (param.toLowerCase() === 'politician') { return "Your tax dollars" }
+     else if (param.toLowerCase() === 'rapper') { return "Cristal" }
+     return "Beer" 
 }
+
 
 // It's too hot, and they can't even…
 // One hot summer day Pete and his friend Billy decided to buy watermelons. They chose the biggest crate. They rushed home, dying of thirst, and decided to divide their loot, however they faced a hard problem.
@@ -123,8 +190,11 @@ function getDrinkByProfession(param){
 // divide(5) === false // 5 = 2 + 3
 // divide(6) === true  // 6 = 2 + 4
 
-function divide(){
-	// your Code HERE
+function divide(w){
+	if (w > 2 && w % 2 === 0) {
+		return true ;
+	}
+	return false ;
 }
 
 
@@ -137,7 +207,16 @@ function divide(){
 // Note: You can expect all of the inputs to be the same length.
 
 function tripleTrouble(one, two, three){
-  //Solution
+     if ( one.length !== two.length || one.length !== three.length ) {
+     	return false ;
+     }
+     var i = 0 ;
+     var m = '';
+     while (i < one.length) {
+     	m += one[i]+two[i]+three[i] ;
+     	i++;
+     }
+     return m ;
 }
 
 
@@ -150,7 +229,10 @@ function tripleTrouble(one, two, three){
 // array = [1, 2, 3] and N = 3, but N is outside of the array, so the result is -1.
 
 function index(array, n){
-  //your code here
+    if (array.length <= n) {
+   	    return -1 ;
+   }
+    return array[n]**n ;
 }
 
 
@@ -167,7 +249,13 @@ function index(array, n){
 // Zero alone is fine, don't worry about it. Poor guy anyway
 
 function noBoringZeros(n) {
-  // your code
+	if ( n === 0 ) {
+		return 0 ;
+	}
+     while (n % 10 === 0) {
+		n /= 10 ;
+	}
+	return n ;
 }
 
 // There was a test in your class and you passed it. Congratulations!
@@ -181,5 +269,14 @@ function noBoringZeros(n) {
 // Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
 
 function betterThanAverage(classPoints, yourPoints) {
-  // Your code here
+     classPoints.push(yourPoints)
+     var i = 0 ;
+     while ( i < classPoints.length ) {
+     	classPoints[0] += classPoints[i] ;
+     	i++ ;
+     }
+     if (yourPoints > (classPoints[0] / classPoints.length)) {
+     	return true 
+     }
+     return false
 }
