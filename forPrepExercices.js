@@ -2,9 +2,45 @@
 // 0.Try to write all of the exercises using both the for loop and while loop.
 
 // 1.Write a function sum that computes the sum of the numbers in an array.
-
+function sum(arr) {
+	var result = 0;
+	for(var i = 0; i < arr.length; i++){
+		result += arr[i] 
+	}
+	return result
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function sum(arr) {
+	var result = 0;
+	var i = 0
+	while(i < arr.length){
+		result += arr[i]
+		i++
+	}
+	return result
+}
 // 2.Write a function max that accepts an array of numbers and returns the largest number in the array.
-
+function max(arr) {
+	var result = arr[0]
+	for(var i = 1; i < arr.length; i++) {
+		if(result < arr[i]){
+			result = arr[i]
+		}
+	}
+	return result
+}
+/////////////////////////////////   While Loop   ///////////////////////////////////////////////////////
+function max(arr) {
+	var result = arr[0];
+	var i = 1
+	while (i < arr.length) {
+		if(result < arr[i]){
+			result = arr[i]
+	}
+	i++
+}
+return result
+}
 // 3.Try the following at a console:
 
 //  'the quick brown fox jumped over the lazy dog'.split(' ');
@@ -12,14 +48,80 @@
 //  '1,2,3,4,5,6'.split(',')
 // What is returned by split (You can read more about it here (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) and how does it work?
 //  Use split to write a function longestWord that takes a string as an argument and returns the longest word.
+function longestWord (string) {	
+var arr = string.split(' ');
+	var result = arr[0];
+	for(var i = 1; i < arr.length; i++) {
+		if (result.length < arr[i].length){
+			result = arr[i]
+		}
+	}
+	return result
+}
+//////////////////////   While Loop  ///////////////////////////////////////////
+function longestWord (string) {	
+var arr = string.split(' ');
+	var result = arr[0];
+	var i = 1;
+	while(i < arr.length){
+		if (result.length < arr[i].length){
+			result = arr[i]
+		}
+		i++
+	}
+	return result
+}
+
+
 // 4.Write a function remove that accepts an array and an element, and returns an array with all ocurrences of element removed.
 
 // function remove(array, element) {
 //  // your code here
 //  }
 //  remove([1, 3, 6, 2, 3], 3); // => [1, 6, 2]
+function remove (arr, element) {
+	var result = [];
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] !== element) {
+			result.push(arr[i])
+		}
+	}
+	return result
+}
+/////////////////////////   While Loop   /////////////////////////////////////////////
+function remove (arr, element) {
+	var result = [];
+	var i = 0
+	while ( i < arr.length) {
+		if (arr[i] !== element) {
+			result.push(arr[i])
+		}
+		i++
+	}
+	return result
+}
 // 5.Write a function evens that accepts an array as an argument, and returns an array consisting of all of the even numbers in that array.
-
+function evens (arr) {
+	var result = [];
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] % 2 === 0){
+			result.push(arr[i])
+		}
+	}
+	return result
+}
+/////////////////////   While Loop   //////////////////////////////////////////////////
+function evens (arr) {
+	var result = [];
+	var i = 0;
+	while( i < arr.length) {
+		if (arr[i] % 2 === 0){
+			result.push(arr[i])
+		}
+		i++
+	}
+	return result
+}
 // More Practice
 // 1.Write a function called average that takes an array of numbers as a parameter and returns the average of those numbers.
 
