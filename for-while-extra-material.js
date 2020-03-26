@@ -6,9 +6,16 @@ hint: strings also have the .length property - i.e `"starburst".length` is 9
 
 // YOUR CODE GOES HERE
 
-function (arr){
-
+function longestString (arr){
+	var result = arr[0];
+	for(var i = 1; i < arr.length; i++) {
+		if (result.length < arr[i].length){
+			result = arr[i]
+		}
+	}
+	return result
 }
+
 
 // Will you make it?
 // You were camping with your friends far away from home, but when it's time to go back,
@@ -18,6 +25,10 @@ function (arr){
 //    The input values are always positive.
 
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+	if(mpg * fuelLeft >= distanceToPump){
+		return true
+	}
+	return false
 };
 
 
