@@ -3,7 +3,83 @@
 
 // 1.Write a function sum that computes the sum of the numbers in an array.
 
+function sumWhile(arr) { // while loop
+
+	var s = 0;
+
+	var i = 0;
+
+	while(i < arr.length) {
+
+		s += arr[i];
+
+		i += 1;
+
+	}
+
+return s;
+
+}
+
+
+function sumFor(arr) { // for loop
+
+	var s = 0;
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		s += arr[i];
+
+	}
+
+return s;
+
+}
+
 // 2.Write a function max that accepts an array of numbers and returns the largest number in the array.
+
+function largestNumWhile(arr) { // while loop
+
+	var largest = arr[0];
+
+	var i = 1;
+
+	while(i < arr.length) {
+
+		if(arr[i] > largest) {
+
+		largest = arr[i];
+
+		}
+
+		i += 1;
+
+	}
+
+return largest;
+
+}
+
+
+function largestNumFor(arr) { // for loop
+
+	var largest = arr[0];
+
+	for(var i = 1; i < arr.length; i += 1) {
+
+		if(arr[i] > largest) {
+
+		largest = arr[i];
+
+		}		
+
+	}
+
+return largest;
+
+}
+
+
 
 // 3.Try the following at a console:
 
@@ -12,7 +88,89 @@
 //  '1,2,3,4,5,6'.split(',')
 // What is returned by split (You can read more about it here (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) and how does it work?
 //  Use split to write a function longestWord that takes a string as an argument and returns the longest word.
+
+function longestWordWhile(str) { // while loop
+
+	var arr;
+
+	arr = str.split(' ');
+
+	var longest = arr[0] ;
+
+	var i = 1;
+
+	while(i < arr.length) {
+
+		if(arr[i].length > longest.length)
+
+		longest = arr[i];
+
+		i += 1;
+
+	}
+
+return longest;
+
+}
+
+
+function longestWordFor(str) { // for loop
+
+	var arr;
+
+	arr = str.split(' ');
+
+	var longest = arr[0] ;
+
+	for(var i = 1; i < arr.length; i += 1) {
+
+		if(arr[i].length > longest.length)
+
+		longest = arr[i];	
+
+	}
+
+return longest;
+
+}
+
 // 4.Write a function remove that accepts an array and an element, and returns an array with all ocurrences of element removed.
+
+function elementRemovedWhile(arr, e) { // not completed
+
+	var newarr = [];
+
+	var i = 0;
+
+	while(i < arr.length) {
+
+		var j = 0;
+
+		while(j < arr[i].length) {
+
+			if(arr[i][j] !== e) {
+
+				newarr[i] = newarr[i] + arr[i][j]; 
+
+				console.log(newarr[i]);
+
+				j = j + 1;
+
+			} else {
+
+			j = j + 1;
+
+			}
+
+		}
+
+		i = i + 1;
+	
+	}
+
+return newarr;
+
+}
 
 // function remove(array, element) {
 //  // your code here
