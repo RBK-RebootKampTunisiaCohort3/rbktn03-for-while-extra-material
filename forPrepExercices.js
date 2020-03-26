@@ -249,18 +249,179 @@ return newarr;
 
 }
 // More Practice
-
 // 1.Write a function called average that takes an array of numbers as a parameter and returns the average of those numbers.
+
+function averageWhile(arr) { //while loop
+
+	var sum = 0;
+
+	var i = 0;
+
+	while(i < arr.length) {
+
+		sum += arr[i];
+
+		i += 1;
+
+	}
+
+return sum / arr.length;
+
+}
+
+function averageFor(arr) { //for loop
+
+	var sum = 0;
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		sum += arr[i];
+
+	}
+
+return sum / arr.length;
+
+}
 
 // 2. Write a function called min that finds the smallest number in an array of numbers.
 
+function minWhile(arr) { // while loop
+
+	var min = arr[0];
+
+	var i = 1;
+
+	while(i < arr.length) {
+
+		if(arr[i] < min) {
+
+		min = arr[i];
+
+		}
+
+		i += 1;
+
+	}
+
+return min;
+
+}
+
+
+function minFor(arr) { // for loop
+
+	var min = arr[0];
+
+	for(var i = 1; i < arr.length; i += 1) {
+
+		if(arr[i] < min) {
+
+		min = arr[i];
+
+		}		
+
+	}
+
+return min;
+
+}
+
+
 // 3.Write a function shortestWord that works like longestWord, but returns the shortest word instead.
 
+function shortestWordWhile(str) { // while loop
+
+	var arr;
+
+	arr = str.split(' ');
+
+	var shortest = arr[0] ;
+
+	var i = 1;
+
+	while(i < arr.length) {
+
+		if(arr[i].length < shortest.length)
+
+		shortest = arr[i];
+
+		i += 1;
+
+	}
+
+return shortest;
+
+}
+
+
+function shortestWordFor(str) { // for loop
+
+	var arr;
+
+	arr = str.split(' ');
+
+	var shortest = arr[0] ;
+
+	for(var i = 1; i < arr.length; i += 1) {
+
+		if(arr[i].length < shortest.length)
+
+		shortest = arr[i];	
+
+	}
+
+return shortest;
+
+}
+
+
 // 4.Write a function countChar that takes two arguments: any string, and a character (string of one letter), and returns the number of times that the character occurs in the string.
+
+function countCharWhile(str, letter) {
+
+		var counter = 0;
+
+		var i = 0;
+
+		while(i < str.length) {
+
+			if(str[i] === letter) {
+
+				counter += 1;
+
+			}
+
+		i += 1;	
+
+		}
+
+	return counter;
+
+}
+
+
+function countCharFor(str, letter) {
+
+		var counter = 0;
+
+		for(var i = 0; i < str.length; i += 1) {
+
+			if(str[i] === letter) {
+
+			counter += 1;
+
+			}	
+
+		}
+
+	return counter;
+
+}
 
 // 5.Write a function evenLengthWords that takes an array of strings as an argument, and returns an array of just the words that have an even length.
 
 // Advanced
+
 // 1.Read about the join method on MDN and use it to implement a function that accepts a string as an argument and returns that string reversed
 
 // 2.Write a function keep that 'keeps' certain elements in an array. The function will need to take two arguments, an array, and something else -- the second argument will be what is used to determine which elements to keep.
