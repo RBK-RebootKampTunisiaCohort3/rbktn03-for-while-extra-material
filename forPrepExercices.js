@@ -112,14 +112,49 @@ function Min(arr){
   return result
 }
 // 3.Write a function shortestWord that works like longestWord, but returns the shortest word instead.
+function shortestWord(str){
+	var x = str.split(' ')
+    var result = x[0]
+    for(var i=0;i<x.length;i++){
+    	if(result.length>x[i].length){
+    		result = x[i]
+    	}
+    }
+ return result
+}
+
 
 // 4.Write a function countChar that takes two arguments: any string, and a character (string of one letter), and returns the number of times that the character occurs in the string.
-
+function CountChar(str,letter){
+	var x = str.split('')
+	var result = 0
+	for(var i=0;i<x.length;i++){
+		if(letter===x[i]){
+			result+=1
+		}
+	}
+  return result
+}
 // 5.Write a function evenLengthWords that takes an array of strings as an argument, and returns an array of just the words that have an even length.
-
+ function EvenLengthWords(arr){ 	
+var result=[]
+ 	for(var i=0;i<arr.length;i++){
+        if((arr[i].length%2)===0){
+        	result.push(arr[i])
+        }
+ 	}
+    return result
+ }
 // Advanced
 // 1.Read about the join method on MDN and use it to implement a function that accepts a string as an argument and returns that string reversed
-
+function reverseString(str){
+  	var x = str.split('')
+  	var result = []
+   for(var i=x.length;i>=0;i--){
+   	  result.push(x[i])
+   }
+  return result.join('')
+  }
 // 2.Write a function keep that 'keeps' certain elements in an array. The function will need to take two arguments, an array, and something else -- the second argument will be what is used to determine which elements to keep.
 
 // You should be able to use this function to write evens, evenLengthWords, a hypothetical odds function, or oddLengthWords without changing the keep function.
