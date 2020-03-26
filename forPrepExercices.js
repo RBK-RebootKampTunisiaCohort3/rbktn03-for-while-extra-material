@@ -84,11 +84,31 @@ function longestWord(str){
 //  // your code here
 function remove(array,element){
 
-}
 //  }
 //  remove([1, 3, 6, 2, 3], 3); // => [1, 6, 2]
 // 5.Write a function evens that accepts an array as an argument, and returns an array consisting of all of the even numbers in that array.
+function evens(array){
+	var result = [];
+	var i = 0;
+		while (i < array.length ){
+				if (array[i] % 2 === 0){
+					 result.push(array[i]);
+				}
+					i++;
+		}
+					return result;
+}
 
+function evens(array){
+	var result = [];
+	for (var i = 0 ; i < array.length ; i ++){
+		if (array[i] %2 === 0){
+			result.push(array[i]);
+		}
+
+	}
+			return result;
+}
 // More Practice
 // 1.Write a function called average that takes an array of numbers as a parameter and returns the average of those numbers.
 
