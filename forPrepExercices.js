@@ -197,9 +197,50 @@ function shortestWord(str){
 					return result;
 }
 // 4.Write a function countChar that takes two arguments: any string, and a character (string of one letter), and returns the number of times that the character occurs in the string.
+function countChar (str,character){
+	var result = 0;
+	var i = 0;
+		while (i < str.length){
+			if (character === str[i]){
+						result += 1;
+			}
+					i++;
+		}
+					return result;
+}
 
+function countChar (str,character){
+	var result = 0;
+	for(var i = 0; i < str.length ; i++){
+		if (character === str[i]){
+					result += 1;
+		}
+	}
+					return result;
+}
 // 5.Write a function evenLengthWords that takes an array of strings as an argument, and returns an array of just the words that have an even length.
+function evenLengthWords(array){
+	result = [];
+	var i = 0;
+		while ( i < array.length){
+			if (array[i].length % 2 === 0){
+					result.push(array[i]);
 
+			}
+				i++;
+		}
+				return result;
+}
+
+function evenLengthWords(array){
+	result = [];
+		for(var i = 0; i < array.length ; i++){
+			if (array[i].length % 2 === 0){
+						result.push(array[i]);
+			}
+		}
+						return result;
+}
 // Advanced
 // 1.Read about the join method on MDN and use it to implement a function that accepts a string as an argument and returns that string reversed
 
