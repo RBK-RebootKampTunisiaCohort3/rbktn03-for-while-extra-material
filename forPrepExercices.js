@@ -377,7 +377,7 @@ return shortest;
 
 // 4.Write a function countChar that takes two arguments: any string, and a character (string of one letter), and returns the number of times that the character occurs in the string.
 
-function countCharWhile(str, letter) {
+function countCharWhile(str, letter) { // while loop
 
 		var counter = 0;
 
@@ -400,7 +400,7 @@ function countCharWhile(str, letter) {
 }
 
 
-function countCharFor(str, letter) {
+function countCharFor(str, letter) { // for loop
 
 		var counter = 0;
 
@@ -420,10 +420,188 @@ function countCharFor(str, letter) {
 
 // 5.Write a function evenLengthWords that takes an array of strings as an argument, and returns an array of just the words that have an even length.
 
+function evenLengthWordsWhile(arr) { // while loop
+
+		var newarr = [];
+
+		var i = 0;
+
+		while(i < arr.length) {
+
+			if(arr[i].length % 2 === 0) {
+
+				newarr.push(arr[i]);
+
+			}
+
+		i += 1;	
+
+		}
+
+	return newarr;
+
+}
+
+
+function evenLengthWordsFor(arr) { // for loop
+
+		var newarr = [];
+
+		for(var i = 0; i < arr.length; i += 1) {
+
+			if(arr[i].length % 2 === 0) {
+
+				newarr.push(arr[i]);
+
+			}
+
+		}
+
+	return newarr;
+
+}
+
+
 // Advanced
 
 // 1.Read about the join method on MDN and use it to implement a function that accepts a string as an argument and returns that string reversed
 
+function reverseJoinWhile(str) { // while loop
+
+	var arr = str.split('');
+
+	var newarr = [];
+
+	var i = arr.length - 1;
+
+	while(i >= 0) {
+
+		newarr.push(arr[i]);
+
+		i -= 1;
+
+	}
+
+return newarr.join('');
+
+}
+
+
+function reverseJoinFor(str) { // for loop
+
+	var arr = str.split('');
+
+	var newarr = [];
+
+	for(var i = arr.length - 1; i >= 0; i -= 1) {
+
+		newarr.push(arr[i]);
+
+	}
+
+return newarr.join('');
+
+}
+
 // 2.Write a function keep that 'keeps' certain elements in an array. The function will need to take two arguments, an array, and something else -- the second argument will be what is used to determine which elements to keep.
 
+function keepWhile(arr, cond) { // while loop
+
+	var i = 0;
+
+	while(i < arr.length) {
+
+		if(cond === "numbers") {
+
+			if(typeof arr[i] !== "number") {
+
+				arr.splice(i, 1);
+
+			}
+
+		i += 1;
+
+		} else if(cond === "strings") {
+
+				if(typeof arr[i] !== "string") {
+
+					arr.splice(i, 1);
+
+				}
+
+		i += 1;
+
+		}
+
+	}
+
+return arr;
+
+}
+
+
+function keepFor(arr, cond) { // while loop
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		if(cond === "numbers") {
+
+			if(typeof arr[i] !== "number") {
+
+				arr.splice(i, 1);
+
+			}
+
+		} else if(cond === "strings") {
+
+				if(typeof arr[i] !== "string") {
+
+					arr.splice(i, 1);
+
+				}
+
+		}
+
+	}
+
+return arr;
+
+}
+
 // You should be able to use this function to write evens, evenLengthWords, a hypothetical odds function, or oddLengthWords without changing the keep function.
+
+function keepAllFor(arr, cond) { // for loop
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		if(cond === "numbers") {
+
+			if(typeof arr[i] !== "number") {
+
+				arr.splice(i, 1);
+
+			}
+
+		} else if(cond === "strings") {
+
+				if(typeof arr[i] !== "string") {
+
+					arr.splice(i, 1);
+
+				}
+
+		} else if(cond === "even") {
+
+				arr = evenFor(arr);
+
+		} else if(cond === "evenlengthwords") {
+
+				arr = evenLengthWordsFor(arr);
+
+		} 
+
+	}
+
+return arr;
+
+}
