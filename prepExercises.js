@@ -7,22 +7,44 @@
 //  sum(3); // => 6 
 //  sum(4); // => 10 
 //  sum(5); // => 15
-
+function sum(n){
+	var result = 0;
+	while (n>0){
+	result = result + n;
+	n = n - 1;
+}
+	return result;
+} 
 
 
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.:
 //  function factorial(n) { 
 //  // TODO: your code here 
+function factorial(n){
+	var result = 1;
+	while (n > 1){
+		result *= n;
+		n -= 1;
+	}
+		return result;
+}
+
 //  } 
 //  factorial(3); // => 6 
 //  factorial(4); // => 24 
 //  factorial(5); // => 120
 
-
-
 // 3.Repeating a String n Times: Let's write a function called repeatString that takes two parameters: a string str, which is the string to be repeated, and count -- a number representing how many times the string s should be repeated, e.g.
 //  function repeatString(str, count) { 
 //  // TODO: your code here 
+function repeatString(str,count){
+	var result = "";
+	while (count !== 0){
+		result += str;
+		count -= 1;
+	}
+		return result;
+}
 //  } 
 //  repeatString('dog', 0); // => '' 
 //  repeatString('dog', 1); // => 'dog' 
@@ -40,6 +62,17 @@
 // 2.Fencepost Loop: Use a while loop to build a single string with the numbers 1 through n, separated by commas. Have it return the new string. How can we make sure not to have a comma after the last number?
 //  function counting(n) { 
 //        // TODO: your code here 
+function counting(n){
+	if(n === 1){
+	return '1';
+	}
+    var result = n;
+	while (n > 1){
+        n -= 1; 
+        result = n + ',' + result ;
+	}
+		return result;
+}
 //  } 
 //  counting(5); // => '1, 2, 3, 4, 5' 
 //  counting(1); // => '1' 
@@ -61,7 +94,16 @@
 
 // 4.Reverse String: Write a function that takes a string as an input and returns the reverse of that string.
 //  function reverseString(str) { 
-//        // TODO: your code here 
+//        // TODO: your code here
+function reverseString(str){
+	var string = "";
+	var i = str.length - 1;
+	while(i >= 0){
+		string += str[i];
+		i --;
+	}
+		return string;
+}
 //  } 
 //  reverseString('hello'); // => 'olleh' 
 //  reverseString('1#*$'); // => '$*#1'
@@ -73,13 +115,22 @@
 
 
 
-
 // 6.Write a JavaScript for loop that will iterate from 0 to n. For each iteration, it will check if the current number is odd or even, and display a message to the screen.
 // Sample Output : 
 //  '0 is even' 
 //  '1 is odd' 
 //  '2 is even'
+function oddOrEven(n){
+	var result = "";
+	for(var i = 0; i < n ; i++){
+		if (n % 2 === 0){
+			return n + " " + "is even";
+		}
+			return n + " " + "is odd";
 
+	}
+			return result;
+}
 
 
 
@@ -108,7 +159,6 @@
 //    ***** 
 //     *** 
 //      *
-
 
 
 // 3. Write a program that reads a character for playing the game of Rock-Paper-Scissors. If the character entered by the user is not one of 'P', 'R' or 'S', the program keeps on prompting the user to enter a new character.
