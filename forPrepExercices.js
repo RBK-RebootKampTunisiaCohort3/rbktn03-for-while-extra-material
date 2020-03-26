@@ -117,11 +117,49 @@ function evenFor(array){
 }
 // More Practice
 // 1.Write a function called average that takes an array of numbers as a parameter and returns the average of those numbers.
-
+function averageWhile(array){
+	var sum = 0;
+	var i = 0;
+	while (i < array.length){
+		sum = sum + array[i];
+		i++; 
+	}
+	return sum / array.length ;
+}
+function averageFor(array){
+	var sum = 0;
+	for(var i = 0; i < array.length; i++){
+		sum = sum + array[i]
+	}
+	return sum / array.length;
+}
 // 2. Write a function called min that finds the smallest number in an array of numbers.
-
+function minWhile(arr){
+	var smallerNum = arr[0];
+	var i = 0;
+	while (i <= arr.length){
+	 	if(arr[i] < smallerNum){
+				smallerNum = arr[i];
+		}else if(arr[i] > smallerNum){	
+			smallerNum = smallerNum;
+		}
+		i++
+	}
+		return smallerNum;
+}
+function minFor(arr){
+	var smallerNum = arr[0];
+	for(var i = 0; i <= arr.length; i++){
+	 	if(arr[i] < smallerNum){
+				smallerNum = arr[i];
+		}else if(arr[i] > smallerNum){	
+			smallerNum = smallerNum;
+		}
+	}
+		return smallerNum;
+}
 // 3.Write a function shortestWord that works like longestWord, but returns the shortest word instead.
-
+function 
 // 4.Write a function countChar that takes two arguments: any string, and a character (string of one letter), and returns the number of times that the character occurs in the string.
 
 // 5.Write a function evenLengthWords that takes an array of strings as an argument, and returns an array of just the words that have an even length.
