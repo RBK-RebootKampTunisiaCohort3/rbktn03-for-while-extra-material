@@ -136,7 +136,7 @@ return longest;
 
 // 4.Write a function remove that accepts an array and an element, and returns an array with all ocurrences of element removed.
 
-function elementRemovedWhile(arr, e) { // not completed
+function elementRemovedWhile(arr, e) { // while loop
 
 	var newarr = [];
 
@@ -144,15 +144,15 @@ function elementRemovedWhile(arr, e) { // not completed
 
 	while(i < arr.length) {
 
+		var s = "";
+
 		var j = 0;
 
 		while(j < arr[i].length) {
 
 			if(arr[i][j] !== e) {
 
-				newarr[i] = newarr[i] + arr[i][j]; 
-
-				console.log(newarr[i]);
+				s = s + arr[i][j]; 
 
 				j = j + 1;
 
@@ -164,6 +164,8 @@ function elementRemovedWhile(arr, e) { // not completed
 
 		}
 
+		newarr.push(s)
+
 		i = i + 1;
 	
 	}
@@ -172,13 +174,82 @@ return newarr;
 
 }
 
-// function remove(array, element) {
-//  // your code here
-//  }
-//  remove([1, 3, 6, 2, 3], 3); // => [1, 6, 2]
+
+function elementRemovedFor(arr, e) { // for loop
+
+	var newarr = [];
+
+	for(var i = 0; i < arr.length; i = i + 1) {
+
+		var s = "";
+
+		for(var j = 0; j < arr[i].length; j = j + 1) {
+
+			if(arr[i][j] !== e) {
+
+				s = s + arr[i][j];
+
+			} 
+
+		}
+
+		newarr.push(s)
+	
+	}
+
+return newarr;
+
+}     // the result will be like that:
+       
+
+// elementRemovedFor(["hello", "love", "hi", "console"], "l") ===> ["heo", "ove", "hi", "consoe"];
+
+
+
 // 5.Write a function evens that accepts an array as an argument, and returns an array consisting of all of the even numbers in that array.
 
+function evenWhile(arr) { // while loop
+
+	var newarr = [];
+
+	var i = 0;
+
+	while(i < arr.length) {
+
+		if(arr[i] % 2 === 0) {
+
+			newarr.push(arr[i]);
+
+		}
+
+	i += 1;
+
+	}
+
+return newarr;	
+
+}
+
+
+function evenFor(arr) { // for loop
+
+	var newarr = [];	
+
+	for(var i = 0; i < arr.length; i += 1) {
+
+		if(arr[i] % 2 === 0) {
+
+			newarr.push(arr[i]);
+
+		}
+
+	}
+
+return newarr;	
+
+}
 // More Practice
+
 // 1.Write a function called average that takes an array of numbers as a parameter and returns the average of those numbers.
 
 // 2. Write a function called min that finds the smallest number in an array of numbers.
