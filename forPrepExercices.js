@@ -23,15 +23,27 @@ function sum(nums){
 
 
 // 2.Write a function max that accepts an array of numbers and returns the largest number in the array.
-function max(nums){
-	var result = nums[0];
+
+function max(array){
+	var result= array[0];
 	var i = 1;
-	while (i < nums.length){
-		if (nums[i] > result){
-			result = nums[i];
+	while (i < array.length){
+		if (array[i] > result){
+			result = array[i];
 		}
+			i ++ ;
 	}
 			return result;
+}
+
+function max(array) {
+	var result = array[0];
+	for (var i = 1; i < array.length; i++ ) {
+	if (array[i]> result){                  
+		result = array[i];
+	}
+	}
+	return result;
 }
 
 // 3.Try the following at a console:
@@ -41,6 +53,20 @@ function max(nums){
 //  '1,2,3,4,5,6'.split(',')
 // What is returned by split (You can read more about it here (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) and how does it work?
 //  Use split to write a function longestWord that takes a string as an argument and returns the longest word.
+
+function longestWord(str){
+	var array = str.split;
+	var result = str[0];
+	var i = 1;
+	while (i < str.length){
+		if (str[i] > result){
+			result = str[i];
+		}
+			i++;
+	}
+			return result;
+
+}
 // 4.Write a function remove that accepts an array and an element, and returns an array with all ocurrences of element removed.
 
 // function remove(array, element) {
