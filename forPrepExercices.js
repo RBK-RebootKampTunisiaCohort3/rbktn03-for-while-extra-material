@@ -83,7 +83,26 @@ function longestWord(str){
 // function remove(array, element) {
 //  // your code here
 function remove(array,element){
+		var result = [];
+		var i = 0;
+			while (i < array.length){
+				if (array[i] !== element){
+						result.push(array[i]);
+				}
+						i++;
+			}
+						return result;
+			}
 
+	function remove(array,element){
+		var result = [];
+			for(var i = 0; i < array.length; i++ ){
+				if (array[i] !== element){
+							result.push(array[i]);
+				}
+			}
+							return result;
+	}
 //  }
 //  remove([1, 3, 6, 2, 3], 3); // => [1, 6, 2]
 // 5.Write a function evens that accepts an array as an argument, and returns an array consisting of all of the even numbers in that array.
@@ -111,11 +130,72 @@ function evens(array){
 }
 // More Practice
 // 1.Write a function called average that takes an array of numbers as a parameter and returns the average of those numbers.
+function average(number){
+	var result = 0;
+	var i = 0;
+	while (i < number.length){
+		result += number [i];
+		i ++; 
+	}
+		return result / number.length ;
+}
+
+function average (number){
+	var result = 0;
+	for(var i = 0; i < number.length; i++){
+			result += number[i];
+	}
+		return result / number.length ;
+
+}
 
 // 2. Write a function called min that finds the smallest number in an array of numbers.
+function min(array){
+	var result = array[0];
+	var i = 1;
+		while (i < array.length ){
+			if (array[i] < result){
+						result = array[i];
+			}
+						i++;
+		}
+					return result;
+}
+
+function min(array){
+	var result = array[0];
+	for (var i = 1; i < array.length ; i++){
+		if (array[i] < result){
+				result = array[i];
+		}
+	}
+				return result;
+}
 
 // 3.Write a function shortestWord that works like longestWord, but returns the shortest word instead.
+function shortestWord(str){
+	var array = str.split(' ');
+	var result = array[0];
+	var i = 1;
+	while (i < array.length){
+		if (array[i].length < result.length ){
+				result = array[i];
+		}
+				i++;
+	}
+				return result;
+}
 
+function shortestWord(str){
+	var array = str.split(' ');
+	var result = array[0];
+	for (var i = 1; i < array.length; i++){
+		if (array[i].length < result.length ){
+						result = array[i];
+		}
+	}
+					return result;
+}
 // 4.Write a function countChar that takes two arguments: any string, and a character (string of one letter), and returns the number of times that the character occurs in the string.
 
 // 5.Write a function evenLengthWords that takes an array of strings as an argument, and returns an array of just the words that have an even length.
