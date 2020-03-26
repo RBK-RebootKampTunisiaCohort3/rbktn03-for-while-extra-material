@@ -73,12 +73,48 @@ function longestWordFor(string){
 
 // 4.Write a function remove that accepts an array and an element, and returns an array with all ocurrences of element removed.
 
-// function remove(array, element) {
-//  // your code here
-//  }
+function removeWhile(array, element) {
+	var cleanArray = [];
+	var i = 0;
+	while(i < array.length){
+		if (array[i] !== element){
+		 cleanArray.push(array[i]);
+		}
+		i++
+	}
+	return cleanArray;
+}
+function removeFor(array, element){
+	var cleanArray = [];
+	for(var i = 0; i < array.length; i++){
+		if (array[i] !== element){
+		 cleanArray.push(array[i]);
+		}
+	}
+	return cleanArray;
+}
 //  remove([1, 3, 6, 2, 3], 3); // => [1, 6, 2]
 // 5.Write a function evens that accepts an array as an argument, and returns an array consisting of all of the even numbers in that array.
-
+function evensWhile(array){
+	var evenArray = [];
+	var i = 0;
+	while(i < array.length){
+		if(array[i] % 2 === 0){
+			evenArray.push(array[i]);
+		}
+		i++
+	}
+	return evenArray;
+}
+function evenFor(array){
+	var evenArray = [];
+	for(var i = 0; i < array.length; i++){
+		if(array[i] % 2 === 0){
+			evenArray.push(array[i]);
+		}
+	}
+	return evenArray;
+}
 // More Practice
 // 1.Write a function called average that takes an array of numbers as a parameter and returns the average of those numbers.
 
