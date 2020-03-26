@@ -45,6 +45,16 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
 // The second string argument will always be of length 1
 
 function strCount(str, letter){ 
+	var result = 0;
+	if(str === ''){
+		return 0
+	}
+	for(var i = 0; i < str.length; i++){
+		if(str[i] === letter) {
+			result ++
+		}
+	}
+	return result
 }
 
 
