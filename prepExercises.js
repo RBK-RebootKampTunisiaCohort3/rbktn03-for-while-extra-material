@@ -186,7 +186,7 @@ function factor(n){
 //  firstAndLast(456) ==> 4 + 6 = 11 
 //  firstAndLast(123) ==> 1 + 3 = 4 
 //  firstAndLast(197) ==> 1 + 7 = 8
-
+function 
 
 
 
