@@ -6,9 +6,16 @@ hint: strings also have the .length property - i.e `"starburst".length` is 9
 
 // YOUR CODE GOES HERE
 
-function (arr){
-
+function longestString (arr){
+	var result = arr[0];
+	for(var i = 1; i < arr.length; i++) {
+		if (result.length < arr[i].length){
+			result = arr[i]
+		}
+	}
+	return result
 }
+
 
 // Will you make it?
 // You were camping with your friends far away from home, but when it's time to go back,
@@ -18,6 +25,10 @@ function (arr){
 //    The input values are always positive.
 
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+	if(mpg * fuelLeft >= distanceToPump){
+		return true
+	}
+	return false
 };
 
 
@@ -34,6 +45,16 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
 // The second string argument will always be of length 1
 
 function strCount(str, letter){ 
+	var result = 0;
+	if(str === ''){
+		return 0
+	}
+	for(var i = 0; i < str.length; i++){
+		if(str[i] === letter) {
+			result ++
+		}
+	}
+	return result
 }
 
 
@@ -44,7 +65,26 @@ function strCount(str, letter){
 // The ages will be given in whole numbers, so a baby of 5 months, will have an ascribed ‘age’ of 0. 
 // Return a new array with [youngest age, oldest age, difference between the youngest and oldest age].
 
-function differenceInAges(ages){
+function differenceInAges(ages){	
+var finalResult = [];
+	var youngest = ages[0];
+	var oldest = ages[0]
+    var difference = 0
+	for(var i = 1; i < ages.length; i++){
+		if(youngest > ages[i]){
+			youngest = ages[i]
+		}
+	}
+finalResult.push(youngest)
+	for(var j = 1; j < ages.length; j++){
+		if(oldest < ages[j]){
+			oldest = ages[j]
+		}
+	}
+		finalResult.push(oldest)
+        difference = oldest - youngest
+	 finalResult.push(difference)
+return finalResult
 }
 
 
