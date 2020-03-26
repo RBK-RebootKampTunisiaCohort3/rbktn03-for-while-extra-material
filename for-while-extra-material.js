@@ -6,9 +6,18 @@ hint: strings also have the .length property - i.e `"starburst".length` is 9
 
 // YOUR CODE GOES HERE
 
-function (arr){
+function longest(arr){
+    var result=arr[0]
+    for(var i=0;i<arr.length;i++){
+    	if(result.length<arr[i].length){
+    		result=arr[i]
+    	}
+    }
 
+  return result
 }
+
+
 
 // Will you make it?
 // You were camping with your friends far away from home, but when it's time to go back,
@@ -17,7 +26,7 @@ function (arr){
 //   write a function that tells you if it is possible to get to the pump or not. Function should return true if it is possible and false if not.
 //    The input values are always positive.
 
-const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {	
 };
 
 
@@ -34,6 +43,14 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
 // The second string argument will always be of length 1
 
 function strCount(str, letter){ 
+	var x = str.split('')
+	var result = 0
+	for(var i=0;i<x.length;i++){
+		if(letter===x[i]){
+			result+=1
+		}
+	}
+  return result
 }
 
 
