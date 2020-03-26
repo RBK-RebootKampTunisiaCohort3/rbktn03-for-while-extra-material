@@ -93,9 +93,24 @@ function Max(arr){
     }
 // More Practice
 // 1.Write a function called average that takes an array of numbers as a parameter and returns the average of those numbers.
-
-// 2. Write a function called min that finds the smallest number in an array of numbers.
-
+function averge(arr){
+	var result = 0
+	for(i=0;i<arr.length;i++){
+		result+=arr[i]
+	}
+   return result/i
+}// 2. Write a function called min that finds the smallest number in an array of numbers.
+function Min(arr){
+	var result = Infinity
+	var i =0
+     while(i<arr.length){
+		if(result>arr[i]){
+			result=arr[i]
+		}
+	i++
+	}
+  return result
+}
 // 3.Write a function shortestWord that works like longestWord, but returns the shortest word instead.
 
 // 4.Write a function countChar that takes two arguments: any string, and a character (string of one letter), and returns the number of times that the character occurs in the string.
