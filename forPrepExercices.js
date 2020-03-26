@@ -1,9 +1,38 @@
-// Basic Requirments
+ // Basic Requirments
 // 0.Try to write all of the exercises using both the for loop and while loop.
 
 // 1.Write a function sum that computes the sum of the numbers in an array.
+function sum(nums){
+	var result = 0;
+	var i = 0;
+	while (i < nums.length){
+		result += nums[i];
+		i ++; 
+	}
+		return result;
+}
+
+
+function sum(nums){
+    var result = 0;
+   for(var i = 0 ;i < nums.length ; i++){
+    result += nums[i];
+   }
+    return result;
+}
+
 
 // 2.Write a function max that accepts an array of numbers and returns the largest number in the array.
+function max(nums){
+	var result = nums[0];
+	var i = 1;
+	while (i < nums.length){
+		if (nums[i] > result){
+			result = nums[i];
+		}
+	}
+			return result;
+}
 
 // 3.Try the following at a console:
 
